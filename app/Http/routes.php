@@ -11,6 +11,8 @@
 |
 */
 
+use App\User;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,14 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/admin', function (){
+    return view("admin.index");
+});
+
+Route::resource("admin/users","AdminUsersController");
+Route::get("/user",function(){
+    $user = User::findOrFail(1);
+    echo $user->role->name;
+
+
+});
