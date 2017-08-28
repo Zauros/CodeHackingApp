@@ -34,12 +34,17 @@
         {!! Form::password("password",["class"=>"form-control"]) !!}
     </div>
 
-    {!! Form::submit("Crea un utente", ["class"=>"btn btn-info"]) !!}
+    {!! Form::submit("Modifica un utente", ["class"=>"btn btn-info"]) !!}
 
     {!! Form::close() !!}
 
+        {!! Form::open(["method" => "DELETE", "action" =>["AdminUsersController@destroy",$user->id,"class"=>"pull-right"]]) !!}
 
-    </div>
+        <div class="form-group">
+            {!! Form::submit("Delete User",["class" => "btn btn-danger"]) !!}
+        </div>
+        {!! Form::close() !!}
+        </div>
     </div>
     <div class="row">
         @include("includes.form_error")
