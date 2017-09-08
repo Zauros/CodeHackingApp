@@ -30,6 +30,7 @@
             <td><a href="{!! route("admin.category.edit",$category->id) !!}">{{$category->name}}</a></td>
             <td>{{$category->created_at->diffForHumans()}}</td>
             <td>{{$category->updated_at->diffForHumans()}}</td>
+
         </tr>
                 @endforeach
         </tbody>
